@@ -5,3 +5,6 @@ def show_greetings():
         print (greeting)
 
 show_greetings()
+
+#Tim's attempt at strings
+print "Simple code i guess"
