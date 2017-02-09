@@ -4,7 +4,17 @@ def show_greetings():
     for greeting in greetings:
         print (greeting)
 
+def number_count():
+    number = 0
+    print "Your number is {0}".format(number)
+    for i in range(0, 10):
+        number+=1
+        print "Your number is {0}".format(number)
+
+print "We are executing the function 'show_greetings'"
+print ""
 show_greetings()
 
-#Tim's attempt at strings
-print "Simple code i guess"
+print "Now we are executing the function 'number_count'"
+print ""
+number_count()
