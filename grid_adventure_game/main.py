@@ -40,6 +40,11 @@ def ask_user_input():
             print "Good bye fam"
             break
         print "You entered {0}".format(var)
+        print_argument(var)
+
+# function that prints a given argument
+def print_argument(my_argument):
+    print "Hey friend, you passed this as an argument and this function read it ^-^: {0}".format(my_argument)
 
 # calls the read_items funciton
 read_items()
