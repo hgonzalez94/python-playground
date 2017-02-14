@@ -6,6 +6,10 @@ my_dictionary = {"key": "value",
                  "meme": "harambe"}
 print "You are printing what ever is stored in the key 'meme' in this dictionary: {0}".format(my_dictionary["meme"])
 
+game_responses_dictionary = {"phillip": "creator",
+                             "thomas": "the tank engine",
+                             "42": "the meaning of life"}
+
 
 def start_game():
     print "Welcome to the text Game we talked about, that will help you catch up while I wrap up my tech shit, Python Edition"
@@ -21,6 +25,10 @@ def begin_asking_questions():
 
         if var == my_dictionary["meme"]: # checking to see if what you entered is = to harambe, since harambe is stored in my_dictionary["meme"]
             print "Blessed be our lord and savior {0}".format(my_dictionary["meme"])
+
         print "You entered {0}".format(var) # prints out what ever the fuck you entered
+
+        if var in game_responses_dictionary: # checks to see if what ever 'var' is, is a key inside of the dictionary
+            print "key: {0} - value: {1}".format(var, game_responses_dictionary[var]) # print out what ever is stored in the dictionary, at var
 
 start_game() # calls the start game method
