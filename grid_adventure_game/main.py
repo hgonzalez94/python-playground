@@ -19,6 +19,8 @@ def ask_user_input():
         if var in dictionary:
             print "Hey, looks like what you entered is: {0} and its the key that matches to value: {1}".format(var, dictionary[var])
 
+        take_damage()
+
 
 def dictionary_test(): 
     print "TESTING DICTIONARY"
@@ -31,6 +33,9 @@ def dictionary_test():
 
 ############# GAME CODE HERE ##############
 
+stats = {"health": 69,
+         "attack": 420,
+         "steps_moved": 0}
 items = ["frostmourne", "doomhammer", "ashbringer", "ashes of a'lar", "lightsaber"]
 
 game_grid = [
@@ -45,6 +50,20 @@ game_grid = [
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
             ]
+
+def take_damage():
+    current_health = stats["health"]
+    current_health -= 1
+    stats["health"] = current_health
+    print "Oh no, you took damage!"
+    print_stats()
+
+def print_stats():
+    print "|",
+    for key in stats:
+        print key,
+        print stats[key],
+        print "|",
 
 # Prints the game grid by looping through the game grid array
 def print_game_grid():
