@@ -1,3 +1,36 @@
+dictionary = {"key": "value",
+              "another key": "another value",
+              "harambe": "meme",
+              "thanks": "obama"}
+
+
+############# PRACTICE TEST CODE HERE #################
+# asks the user to input shit
+def ask_user_input():
+    print "Please enter something (enter q to quit)"
+    while 1:
+        var = raw_input("")
+        if var == "q":
+            print "Good bye fam"
+            break
+        print "You entered {0}".format(var)
+        
+        # if what you entered, is in the dictionary as a key, print out something special
+        if var in dictionary:
+            print "Hey, looks like what you entered is: {0} and its the key that matches to value: {1}".format(var, dictionary[var])
+
+
+def dictionary_test(): 
+    print "TESTING DICTIONARY"
+    print "The value for the key: {0} is {1}".format("key", dictionary["key"])
+
+
+############# END PRACTICE TEST CODE HERE ##############
+
+
+
+############# GAME CODE HERE ##############
+
 items = ["frostmourne", "doomhammer", "ashbringer", "ashes of a'lar", "lightsaber"]
 
 game_grid = [
@@ -31,26 +64,19 @@ def read_items():
     print ""
     print "the first item is {0}, the second item is {1}".format(items[0], items[1])
 
-# asks the user to input shit
-def ask_user_input():
-    print "Please enter something (enter q to quit)"
-    while 1:
-        var = raw_input("")
-        if var == "q":
-            print "Good bye fam"
-            break
-        print "You entered {0}".format(var)
-        print_argument(var)
+############# END GAME CODE HERE ##############
 
-# function that prints a given argument
-def print_argument(my_argument):
-    print "Hey friend, you passed this as an argument and this function read it ^-^: {0}".format(my_argument)
 
+############ CALLING STUFF ##############
 # calls the read_items funciton
-read_items()
+#read_items()
 
 # calls the print_game_grid function
 print_game_grid()
 
 # calls the ask_user_input function
+#ask_user_input()
+
+dictionary_test()
+
 ask_user_input()
