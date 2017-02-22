@@ -36,7 +36,14 @@ def dictionary_test():
 stats = {"health": 69,
          "attack": 420,
          "steps_moved": 0}
+
 items = ["frostmourne", "doomhammer", "ashbringer", "ashes of a'lar", "lightsaber"]
+
+monsters = [
+                {"monster_name": "slime",  "health": "2", "damage": "2"},
+                {"monster_name": "wolf",   "health": "5", "damage": "2"},
+                {"monster_name": "spider", "health": "3", "damage": "1"},
+           ]
 
 game_grid = [
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
