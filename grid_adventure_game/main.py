@@ -37,7 +37,13 @@ stats = {"health": 69,
          "attack": 420,
          "steps_moved": 0}
 
-items = ["frostmourne", "doomhammer", "ashbringer", "ashes of a'lar", "lightsaber"]
+items = [
+			{"item_name": "frostmourne", "item_damage": "100", "flavor_text": "frostmourne hungers"},
+			{"item_name": "doomhammer", "item_damage": "12", "flavor_text": "still has some green jesus juice in it"},
+			{"item_name": "ashbringer", "item_damage": "101", "flavor_text": "ooh! shiny!"},
+			{"item_name": "ashes of a'lar", "item_damage": "0", "flavor_text": "its a fire bird, not a weapon"},
+			{"item_name": "lightsaber", "item_damage": "1", "flavor_text": "really strong flashlight"},
+		]
 
 monsters = [
                 {"monster_name": "slime",  "health": "2", "damage": "2"},
