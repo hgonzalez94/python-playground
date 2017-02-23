@@ -35,7 +35,9 @@ def dictionary_test():
 
 stats = {"health": 69,
          "attack": 420,
-         "steps_moved": 0}
+         "steps_moved": 0,
+         "current_row": 0,
+         "current_column": 0}
 
 items = [
 			{"item_name": "frostmourne", "item_damage": "100", "flavor_text": "frostmourne hungers"},
@@ -64,23 +66,50 @@ game_grid = [
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
             ]
 
+def start_game():
+    reset_game_grid()
+    game_grid[0][0] = "@"
+    print_welcome_message()
+    print_game_grid()
+
+def print_welcome_message():
+    print "Welcome to Tim's Game. Please be respectful and stay lit fam\n\n"
+
+def set_player_position(row, column):
+    reset_game_grid() # clear game grid
+    game_grid[row][column] = "@" # set the player position on the game grid
+    stats["current_row"] = row # set the row the player is at
+    stats["current_column"] = column # set the column the player is at
+    stats["steps_moved"] += 1 # make steps moved increase by 1
+
+# sets every position in the game grid to a default '.'
+def reset_game_grid():
+    for row in game_grid:
+        for column in row:
+            column = "."
+
+# Reduces player health. So far health is only reduced by 1 by default.
 def take_damage():
     current_health = stats["health"]
     current_health -= 1
     stats["health"] = current_health
     print "Oh no, you took damage!"
-    print_stats()
+    print_game_grid()
 
+# Prints player stats
 def print_stats():
     print "|",
     for key in stats:
-        print key,
-        print stats[key],
-        print "|",
+        if key != "current_row" and key != "current_column": # only print out shit as long as its not the current_row or current_column key
+            print key,
+            print stats[key],
+            print "|",
+    # \n means a new line. I'm printing 2 lines here
+    print "\n\n"
 
 # Prints the game grid by looping through the game grid array
 def print_game_grid():
-    print "GAME GRID"
+    print_stats()
     for row in game_grid:
         for column in row:
             print column,
@@ -104,11 +133,13 @@ def read_items():
 #read_items()
 
 # calls the print_game_grid function
-print_game_grid()
+#print_game_grid()
 
 # calls the ask_user_input function
 #ask_user_input()
 
-dictionary_test()
+#dictionary_test()
 
-ask_user_input()
+#ask_user_input()
+
+start_game()
