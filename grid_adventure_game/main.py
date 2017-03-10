@@ -82,6 +82,10 @@ def add_game_items():
     for item in items:
         random_row = randrange(0, 10)
         random_column = randrange(0, 10)
+        if random_row != 0:
+            random_row != 1
+        if random_column != 0:
+            random_column != 1
         print "Random Row {0} Random Column {1}".format(random_row, random_column)
         game_grid[random_row][random_column] = "*"
 
