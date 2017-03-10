@@ -1,3 +1,5 @@
+from random import randrange
+
 dictionary = {"key": "value",
               "another key": "another value",
               "harambe": "meme",
@@ -78,7 +80,10 @@ def ask_user_movement():
 
 def add_game_items():
     for item in items:
-        print item
+        random_row = randrange(0, 10)
+        random_column = randrange(0, 10)
+        print "Random Row {0} Random Column {1}".format(random_row, random_column)
+        game_grid[random_row][random_column] = "*"
 
 
 ############# GAME CODE HERE ##############
@@ -119,6 +124,7 @@ game_grid = [
 def start_game():
     reset_game_grid()
     game_grid[0][0] = "@"
+    add_game_items()
     print_welcome_message()
     print_game_grid()
 
@@ -192,8 +198,8 @@ def read_items():
 
 #ask_user_input()
 
-#start_game()
+start_game()
 
 #ask_user_movement()
 
-add_game_items()
+#add_game_items()
