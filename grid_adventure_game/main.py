@@ -73,6 +73,14 @@ def ask_user_movement():
 		print "You have entered the direction: {0} \n\n".format(var)
 		##### use set_player_position to move character
 
+
+##########Add game items~
+
+def add_game_items():
+    for item in items:
+        print item
+
+
 ############# GAME CODE HERE ##############
 
 stats = {"health": 69,
@@ -184,6 +192,8 @@ def read_items():
 
 #ask_user_input()
 
-start_game()
+#start_game()
 
-ask_user_movement()
+#ask_user_movement()
+
+add_game_items()
