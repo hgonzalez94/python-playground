@@ -30,6 +30,48 @@ def dictionary_test():
 ############# END PRACTICE TEST CODE HERE ##############
 
 
+#############Tim Homework Code#############
+def ask_user_movement():
+	print "Where do you want to go?"
+	while 1:
+		var = raw_input("")
+		player_row = stats ["current_row"]
+		player_column = stats ["current_column"]
+		if var == "up" : 
+			if player_row != 0:
+				player_row -= 1
+			
+			else:
+				print "You cant move that way you rascal!\n\n"
+
+		if var == "down":
+			if player_row != 9:
+				player_row += 1
+
+			else:
+				print "You cant move that way you rascal!\n\n"
+		
+		if var == "right":
+			if player_column != 9:
+				player_column += 1
+
+			else:
+				print "You cant move that way you rascal!\n\n"
+
+		if var == "left":
+			if player_column != 0:
+				player_column -= 1
+
+			else:
+				print "You cant move that way you rascal!\n\n"
+		
+		if var == "q" :
+			break
+		set_player_position(player_row, player_column)
+		print_game_grid()
+
+		print "You have entered the direction: {0} \n\n".format(var)
+		##### use set_player_position to move character
 
 ############# GAME CODE HERE ##############
 
@@ -84,9 +126,9 @@ def set_player_position(row, column):
 
 # sets every position in the game grid to a default '.'
 def reset_game_grid():
-    for row in game_grid:
-        for column in row:
-            column = "."
+    for i, value in enumerate(game_grid):
+        for j, val in enumerate(game_grid[i]):
+            game_grid[i][j] = "."
 
 # Reduces player health. So far health is only reduced by 1 by default.
 def take_damage():
@@ -143,3 +185,5 @@ def read_items():
 #ask_user_input()
 
 start_game()
+
+ask_user_movement()
