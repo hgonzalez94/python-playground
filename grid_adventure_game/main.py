@@ -90,6 +90,18 @@ def add_game_items():
         grid_manager[random_row][random_column] = item
         game_grid[random_row][random_column] = "*"
 
+##########Add Monsters
+def add_monsters():
+    for monster in monsters:
+        random_row = randrange(0, 10)
+        random_column = randrange(0, 10)
+        if random_row == 0:
+            random_row = 1
+        if random_column == 0:
+            random_column = 1
+        grid[random_row][random_column] = monster
+        game_grid[random_row][random_column] = "."
+
 
 ############# GAME CODE HERE ##############
 
