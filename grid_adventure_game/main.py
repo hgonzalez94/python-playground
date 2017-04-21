@@ -87,6 +87,7 @@ def add_game_items():
         if random_column == 0:
             random_column = 1
         print "Random Row {0} Random Column {1}".format(random_row, random_column)
+        grid_manager[random_row][random_column] = item
         game_grid[random_row][random_column] = "*"
 
 
@@ -98,6 +99,7 @@ stats = {"health": 69,
          "current_row": 0,
          "current_column": 0}
 
+# array of dictionaries where each dictionary is an item
 items = [
 			{"item_name": "frostmourne", "item_damage": "100", "flavor_text": "frostmourne hungers"},
 			{"item_name": "doomhammer", "item_damage": "12", "flavor_text": "still has some green jesus juice in it"},
@@ -106,12 +108,14 @@ items = [
 			{"item_name": "lightsaber", "item_damage": "1", "flavor_text": "really strong flashlight"},
 		]
 
+# array of dictionaries where each dictionary is a monster
 monsters = [
                 {"monster_name": "slime",  "health": "2", "damage": "2"},
                 {"monster_name": "wolf",   "health": "5", "damage": "2"},
                 {"monster_name": "spider", "health": "3", "damage": "1"},
            ]
 
+# the actual game grid to be drawn on the screen
 game_grid = [
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
@@ -124,6 +128,20 @@ game_grid = [
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
                 [".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
             ]
+
+# Contains dictionaries of what ever is contained in a given row / column. Initialized to empty dictionaries.
+grid_manager = [
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+                [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+               ]
 
 def start_game():
     reset_game_grid()
